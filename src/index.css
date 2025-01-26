@@ -23,7 +23,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #4d86e4;
   cursor: pointer;
   transition: border-color 0.25s;
   color: white;
@@ -63,4 +63,5 @@ li:hover {
 a {
   font-weight: 800;
   text-decoration: none;
+  color: #3073d8;
 }
