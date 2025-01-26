@@ -6,12 +6,35 @@ adding a new "isDone" field as a boolean. The authorization rule below
 specifies that any user authenticated via an API key can "create", "read",
 "update", and "delete" any "Todo" records.
 =========================================================================*/
+/*
 const schema = a.schema({
   Todo: a
     .model({
       content: a.string(),
     })
     .authorization((allow) => [allow.publicApiKey()]),
+});
+*/
+
+const schema = a.schema({
+  Address: a.customType({
+    address: a.string(),
+    state: a.string(),
+    country: a.string(),
+    postcode: a.string()
+  }),
+  PrivacySetting: a.enum(['PRIVATE', 'FRIENDS_ONLY', 'PUBLIC']),
+  Event: a
+    .model({
+      address: a.ref('Address'),
+      name: a.string(),
+      category: a.string(),
+      datetime: a.string(),
+      privacySetting: a.ref('PrivacySetting')
+    })
+    .authorization((allow) => [allow.publicApiKey()]),
+    //.authorization(allow => [allow.authenticated()])
+  // Isolate the data as "onwer-based-authorizatoin" per user basis
 });
 
 export type Schema = ClientSchema<typeof schema>;
@@ -26,6 +49,22 @@ export const data = defineData({
     },
   },
 });
+
+/*
+export const data = defineData({
+  schema,
+  authorizationModes: {
+    // This tells the data client in your app (generateClient())
+    // to sign API requests with the user authentication token.
+    defaultAuthorizationMode: 'userPool',
+    // API Key is used for a.allow.public() rules
+    apiKeyAuthorizationMode: {
+      expiresInDays: 30
+    }
+  }
+});
+
+*/
 
 /*== STEP 2 ===============================================================
 Go to your frontend source code. From your client-side code, generate a
