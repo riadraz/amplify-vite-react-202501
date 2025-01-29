@@ -132,7 +132,8 @@ export default function EventCreateForm(props) {
       {...getOverrideProps(overrides, "EventCreateForm")}
       {...rest}
     >
-      <TextField
+        
+    <TextField
         label="Name"
         isRequired={false}
         isReadOnly={false}
@@ -158,7 +159,8 @@ export default function EventCreateForm(props) {
         errorMessage={errors.name?.errorMessage}
         hasError={errors.name?.hasError}
         {...getOverrideProps(overrides, "name")}
-      ></TextField>
+        ></TextField>
+    
       <TextField
         label="Category"
         isRequired={false}
