@@ -1,4 +1,4 @@
-import { Authenticator,ThemeProvider, createTheme } from '@aws-amplify/ui-react';
+import { Authenticator,ThemeProvider, createTheme, UseAuthenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import EventLanding from './pages/EventLanding';
 import Header from './custom-components/header';
@@ -10,11 +10,7 @@ import Income from './pages/Income';
 import Customers from './pages/Customers';
 import Employees from './pages/Employees';
 import Inventory from './pages/Inventory';
-
-//import {  } from '@aws-amplify/ui-react';
 import { signOut } from 'aws-amplify/auth';
-//import { signIn } from 'aws-amplify/auth';
-
 
 const theme = createTheme({
   name: 'custom-theme',
@@ -65,7 +61,9 @@ function App() {
         initialState="signIn"
         socialProviders={['google', 'facebook']}
       >
-        {({ signOut, user }) => (
+      
+      
+      
           <BrowserRouter>
             <div style={{
               display: 'flex',
@@ -91,7 +89,7 @@ function App() {
               <Footer signOut={handleSignOut} />
             </div>
           </BrowserRouter>
-        )}
+         
       </Authenticator>
     </ThemeProvider>
   );
