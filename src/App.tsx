@@ -1,4 +1,4 @@
-import { Authenticator,ThemeProvider, createTheme, UseAuthenticator } from '@aws-amplify/ui-react';
+import { Authenticator,ThemeProvider, createTheme} from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import EventLanding from './pages/EventLanding';
 import Header from './custom-components/header';
