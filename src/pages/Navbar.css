@@ -1,10 +1,32 @@
 
-
+  
+  .nav-item {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color: #545b64;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-item:hover {
+    background: #e6e7e8;
+  }
+  
+  .nav-item.active {
+    background: white;
+    color: #0073bb;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
 /* Add these styles to your index.css */
 nav {
     width: 100%;
     padding: 1rem;
-    
+      
   }
   
   nav ul {
@@ -16,6 +38,7 @@ nav {
     margin: 0;
     padding: 0;
     gap: 2rem;
+    height: 60px;
     
   }
   

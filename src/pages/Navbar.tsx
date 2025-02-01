@@ -4,6 +4,7 @@ import { useVirtualizer } from '@tanstack/react-virtual';
 import { useMemo } from 'react';
 import React from 'react';
 import './Navbar.css';
+//import './Customers.css';
 const Navbar = () => {
   const location = useLocation();
 
