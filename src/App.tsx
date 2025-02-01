@@ -1,6 +1,5 @@
 import { Authenticator,ThemeProvider, createTheme} from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
-import EventLanding from './pages/EventLanding';
 import Header from './custom-components/header';
 import Footer from './custom-components/footer';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
@@ -10,6 +9,7 @@ import Income from './pages/Income';
 import Customers from './pages/Customers';
 import Employees from './pages/Employees';
 import Inventory from './pages/Inventory';
+import Dashboard from './pages/Dashboard';
 import { signOut } from 'aws-amplify/auth';
 
 const theme = createTheme({
@@ -76,7 +76,7 @@ function App() {
               <main style={{ flex: 1, padding: '2rem' }}>
                 <Routes>
                   <Route path="/" element={<Navigate to="/home" replace />} />
-                  <Route path="/home" element={<EventLanding />} />
+                  <Route path="/home" element={<Dashboard />} />
                   <Route path="/products" element={<Products />} />
                   <Route path="/income" element={<Income />} />
                   <Route path="/customers" element={<Customers />} />
