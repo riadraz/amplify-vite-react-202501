@@ -197,8 +197,7 @@ const Income = () => {
               key={index}
               title={tab.title}
               isActive={activeTab === index}
-              onClick={() => setActiveTab(index)}
-            />
+              onClick={() => setActiveTab(index)} content={undefined}            />
           ))}
         </div>
         <div className="tab-content">
