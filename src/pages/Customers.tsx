@@ -1,5 +1,6 @@
 // src/pages/Customers.tsx
-import { useState, FormEvent } from 'react';
+//import { useState, FormEvent } from 'react';
+import { useState } from 'react';
 import './Customers.css';
 
 interface TabProps {
@@ -87,6 +88,7 @@ const Customers = () => {
     }));
   };
 
+  /*
   const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, checked } = e.target;
     setFormData(prev => ({
@@ -97,10 +99,14 @@ const Customers = () => {
     }));
   };
 
+  
+
+
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
   };
+  */
 
   const navItems = [
     {
@@ -278,8 +284,7 @@ const Customers = () => {
               key={index}
               title={tab.title}
               isActive={activeTab === index}
-              onClick={() => setActiveTab(index)}
-            />
+              onClick={() => setActiveTab(index)} content={undefined}            />
           ))}
         </div>
         <div className="tab-content">
