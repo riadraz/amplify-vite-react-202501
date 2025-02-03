@@ -33,6 +33,13 @@ const schema = a.schema({
       privacySetting: a.ref('PrivacySetting')
     })
     .authorization((allow) => [allow.publicApiKey()]),
+  Todo: a
+    .model({
+      content: a.string(),
+      key: a.string(),
+    })
+    .authorization((allow) => [allow.publicApiKey()]),
+
     //.authorization(allow => [allow.authenticated()])
   // Isolate the data as "onwer-based-authorizatoin" per user basis
 });

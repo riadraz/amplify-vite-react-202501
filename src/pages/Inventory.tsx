@@ -1,17 +1,17 @@
 import MultiSelect from '../components/ui/MultiSelect';
 import SearchableSelect from '../components/ui/SearchableSelect';
-
+import S3ImageUpload from '../components/ui/S3ImageUpload';
   
   
 export default function Inventory() {
   return (
     <div>
-      <h1>Product Selection</h1>
+      <h1>Various React Component:</h1>
       <MultiSelect />
-      <div style={{ padding: '20px' }}>
-        <h1>Product Selector</h1>
-        <SearchableSelect />
-      </div>
+      
+      <SearchableSelect />
+      <S3ImageUpload />
+      
   
     </div>
   );

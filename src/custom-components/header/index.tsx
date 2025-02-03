@@ -11,7 +11,7 @@ const Header: React.FC = ({}) => {
                 <img src={amplifyIcon} style={{ width: '60px', height: '50px' }} />
             </> 
             <TextDiv>
-                Ampligy Gen 2 Vite React
+                AWS Amplify Gen 2 Vite React
             </TextDiv>
         </HeaderDiv>
     );
