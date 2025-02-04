@@ -8,9 +8,8 @@ export default function Inventory() {
     <div>
       <h1>Various React Component:</h1>
       <MultiSelect />
-      
       <SearchableSelect />
-      <S3ImageUpload />
+      <S3ImageUpload mediaId={"22"}/>
       
   
     </div>
