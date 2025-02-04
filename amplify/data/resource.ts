@@ -35,9 +35,9 @@ const schema = a.schema({
     .authorization((allow) => [allow.publicApiKey()]),
   Todo: a
     .model({
-      content: a.string(),
-      key: a.string(),
-    })
+      path: a.string().required(),
+      mediaId: a.string().required(),
+       })
     .authorization((allow) => [allow.publicApiKey()]),
 
     //.authorization(allow => [allow.authenticated()])
