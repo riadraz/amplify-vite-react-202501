@@ -62,15 +62,17 @@ function App() {
         socialProviders={['google', 'facebook']}
       >
       
-      
-      
-          <BrowserRouter>
+      {({ signOut, user }) => (
+        <BrowserRouter>
             <div style={{
               display: 'flex',
               flexDirection: 'column',
               minHeight: '100vh'
             }}>
-              <Header />
+              <Header 
+              signOut={signOut}
+              user={user}
+              />
               <Navbar />
               
               <main style={{ flex: 1, padding: '2rem' }}>
@@ -86,11 +88,11 @@ function App() {
                 </Routes>
               </main>
 
-              <Footer signOut={handleSignOut} />
+              <Footer signOut={handleSignOut}/>
             </div>
           </BrowserRouter>
-         
-      </Authenticator>
+      )}
+    </Authenticator>
     </ThemeProvider>
   );
 }
