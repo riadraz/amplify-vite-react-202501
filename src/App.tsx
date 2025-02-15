@@ -32,18 +32,7 @@ const theme = createTheme({
           
           backgroundColor: '{opacity:0}',
           },
-          container: {
-            // Add these styles to position the authenticator
-            //margin: '0 auto',
-            //padding: '2rem 0',
-            //width: '100%',
-            //maxWidth: '28rem',
-            //position: 'relative',
-            //top: '100',
-            //display: 'flex',
-            //flexDirection: 'column',
-            //alignItems: 'center',
-          },
+          container: {},
       }
     }
   }
@@ -62,17 +51,14 @@ function App() {
         socialProviders={['google', 'facebook']}
       >
       
-      {({ signOut, user }) => (
+     
         <BrowserRouter>
             <div style={{
               display: 'flex',
               flexDirection: 'column',
               minHeight: '100vh'
             }}>
-              <Header 
-              signOut={signOut}
-              user={user}
-              />
+              <Header />
               <Navbar />
               
               <main style={{ flex: 1, padding: '2rem' }}>
@@ -91,7 +77,7 @@ function App() {
               <Footer signOut={handleSignOut}/>
             </div>
           </BrowserRouter>
-      )}
+      
     </Authenticator>
     </ThemeProvider>
   );

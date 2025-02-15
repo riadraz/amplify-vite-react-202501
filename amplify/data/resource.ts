@@ -39,7 +39,7 @@ const schema = a.schema({
       mediaId: a.string().required(),
        })
     .authorization((allow) => [
-      //allow.publicApiKey(),
+      allow.publicApiKey(),
       allow.authenticated(),
     ]),
 
@@ -52,8 +52,7 @@ export type Schema = ClientSchema<typeof schema>;
 export const data = defineData({
   schema,
   authorizationModes: {
-    //defaultAuthorizationMode: "apiKey",
-    defaultAuthorizationMode: "userPool",
+    defaultAuthorizationMode: "apiKey",
     // API Key is used for a.allow.public() rules
     apiKeyAuthorizationMode: {
       expiresInDays: 30,
